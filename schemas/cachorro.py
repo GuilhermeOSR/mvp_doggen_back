@@ -7,7 +7,7 @@ class CachorroSchema(BaseModel):
     """ Define como um novo cachorro a ser inserido deve ser representado.
     """
     nome: str = "Thor"
-    raca: str = "Husky"
+    raca: str = "Golden Retriever"
     idade: date = date(2016, 11, 16)
     tutor: str = "Caroline Santa Rosa"
 
@@ -42,7 +42,7 @@ class CachorroViewSchema(BaseModel):
     """
     id: int = 1
     nome: str = "Thor"
-    raca: str = "Husky"
+    raca: str = "Golden Retriever"
     idade: date = date(2016, 11, 16)
     tutor: str = "Caroline Santa Rosa"
 
