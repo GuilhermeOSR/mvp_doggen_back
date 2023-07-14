@@ -37,15 +37,15 @@ def add_cachorro(form: CachorroSchema):
         tutor=form.tutor
         )
     try:
-        #Cria conexão com a base
+        #Cria conexão com a base.
         session = Session()
-        #Adicionando Cachorro
+        #Adicionando Cachorro.
         session.add(cachorro)
-        #Efetivando o comando de adição de novo item na tabela
+        #Efetivando o comando de adição de novo item na tabela.
         session.commit()
         return apresenta_cachorro(cachorro), 200
     except IntegrityError as e:
-        #Caso tenha dois tutores com nomes iguais
+        #Caso tenha dois tutores com nomes iguais.
         error_msg = "Tutor de mesmo nome já salvo na base :/"
         return {"message": error_msg}, 400
     except Exception as e:
@@ -55,7 +55,7 @@ def add_cachorro(form: CachorroSchema):
 @app.get('/cachorros', tags=[listar_cachorro],
          responses={"200": ListagemCachorrosSchema, "404": ErrorSchema, "400": ErrorSchema})
 def get_cachorros():
-    """Faz a busca por todos os Cachorros cadastrados"""
+    """Faz a busca por todos os Cachorros cadastrados."""
     session = Session()
     cachorros = session.query(Cachorro).all()
 
@@ -69,7 +69,7 @@ def get_cachorros():
 @app.get('/cachorro', tags=[cachorro_tag],
         responses={"200": CachorroViewSchema, "404": ErrorSchema, "400": ErrorSchema})
 def get_cachorro(query: CachorroBuscaSchema):
-    """Faz a busca por todos os cachorros com um nome especifico"""
+    """Faz a busca por todos os cachorros com um nome especifico."""
     cachorro_nome = query.nome
     session = Session()
     cachorros = session.query(Cachorro).filter(Cachorro.nome == cachorro_nome).all()
@@ -84,7 +84,7 @@ def get_cachorro(query: CachorroBuscaSchema):
 @app.delete('/cachorro', tags=[cachorro_tag],
         responses={"200": CachorroDelSchema, "404": ErrorSchema})
 def del_cachorro(query: CachorroBuscaSchema):
-    """Faz a remoção de um cachorro"""
+    """Faz a remoção de um cachorro."""
     cachorro_nome = unquote(unquote(query.nome))
     print(cachorro_nome)
     session = Session()

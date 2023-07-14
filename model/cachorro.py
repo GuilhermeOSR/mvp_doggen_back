@@ -21,7 +21,7 @@ class Cachorro(Base):
         Arguments:
             nome: nome do cachorro.
             raca: raça do cachorro.
-            idade: idade do cachorro
+            idade: idade do cachorro.
             data_insercao: data de quando o cachorro foi inserido à base.
         """
         self.nome = nome

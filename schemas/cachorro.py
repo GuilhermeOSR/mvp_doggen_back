@@ -9,7 +9,7 @@ class CachorroSchema(BaseModel):
     nome: str = "Thor"
     raca: str = "Husky"
     idade: date = date(2016, 11, 16)
-    tutor: str = "Caroline"
+    tutor: str = "Caroline Santa Rosa"
 
 class CachorroBuscaSchema(BaseModel):
     """ Define como deve ser a estrutura que representa a busca. Que será 
@@ -44,7 +44,7 @@ class CachorroViewSchema(BaseModel):
     nome: str = "Thor"
     raca: str = "Husky"
     idade: date = date(2016, 11, 16)
-    tutor: str = "Caroline"
+    tutor: str = "Caroline Santa Rosa"
 
 class CachorroDelSchema(BaseModel):
     """ Define como deve ser a estrutura do dado retornado após uma requisição de remoção.
