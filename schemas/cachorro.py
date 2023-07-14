@@ -54,7 +54,7 @@ class CachorroDelSchema(BaseModel):
 
 def apresenta_cachorro(cachorro: Cachorro):
     """Retorna uma apresentação do produto seguindo o schema definido em 
-    CachorroViewSchema
+    CachorroViewSchema.
     """
     return {
         "id": cachorro.id,
