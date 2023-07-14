@@ -22,13 +22,13 @@ class Cachorro(Base):
             nome: nome do cachorro.
             raca: raça do cachorro.
             idade: idade do cachorro
-            data_insercao: data de quando o cachorro foi inserido à base
+            data_insercao: data de quando o cachorro foi inserido à base.
         """
         self.nome = nome
         self.raca = raca
         self.idade = idade
         self.tutor = tutor
 
-        #Caso não seja informada, será o data exata da inserção no banco
+        #Caso não seja informada, será o data exata da inserção no banco.
         if data_insercao:
             self.data_insercao = data_insercao
